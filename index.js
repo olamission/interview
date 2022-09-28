@@ -1,7 +1,6 @@
 //examples of bike serial nubers
 const bikeString1 = '6F2k-1d-0-z'
 const bikeString2 = '1-4k-9-b'
-
 //function that changes the code to a valid format
 const format_serial_number = (bikeString , length) => {
   /*
@@ -15,8 +14,8 @@ const format_serial_number = (bikeString , length) => {
   undashedSerialNo = '';//3
   counter = 0;//4
   //gets rid of hashes
-  for (let i=0 ; i<bikeString.length ; i++) {
-    undashedSerialNo = bikeString[i]!= '-' ? undashedSerialNo += bikeString[i] : undashedSerialNo ;
+  for (let letter in bikeString) {
+    undashedSerialNo = bikeString[letter]!= '-' ? undashedSerialNo += bikeString[letter] : undashedSerialNo ;
     /*if (bikeString[i]!= '-') { undashedSerialNo += bikeString[i] 
     }*/
   } 
@@ -33,12 +32,14 @@ const format_serial_number = (bikeString , length) => {
   }
 
   //reverses string back again and converts to upper case
-  for (var i = newBikeSerialNo.length - 1; i >= 0; i--) { 
-        newSerialNo += newBikeSerialNo[i];
+  for (let j = newBikeSerialNo.length - 1; j >= 0; j--) { 
+        newSerialNo += newBikeSerialNo[j];
     }
     return newSerialNo.toUpperCase();
 }
 
 console.log([format_serial_number(bikeString1,4) , format_serial_number(bikeString2,2)])
 console.log( format_serial_number('1ggg-4kgg-r-b555' , 5))
+
+
 
